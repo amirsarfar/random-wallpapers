@@ -1,7 +1,7 @@
 import os, argparse, sys
 
 parser = argparse.ArgumentParser(prog='Unsplash Python Wallpaper')
-parser.add_argument('-m', help='change wallpaper every M minutes', default=5, type=int)
+parser.add_argument('-m', help='change wallpaper every M minutes', default=5, type=int, choices=range(1, 59))
 args = parser.parse_args()
 M = vars(args)['m']
 # print(vars(args)['m'])
