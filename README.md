@@ -4,7 +4,15 @@
 
 ## Install
 
-run:
+### clone
+
+```bash
+git clone https://github.com/amirsarfar/random-wallpapers.git
+cd random-wallpapers
+```
+
+### run install script
+
 _(replace MINUTES with desired interval in minutes (1-59))_
 
 ```bash
