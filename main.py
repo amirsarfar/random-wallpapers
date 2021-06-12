@@ -2,6 +2,7 @@ from PIL import Image
 import urllib.request
 import subprocess, os, datetime, random
 
+
 x = datetime.datetime.now()
 folder_name = x.strftime("%Y-%m-%d")
 file_name = x.strftime("%H-%M-%S")
@@ -19,5 +20,6 @@ with urllib.request.urlopen(URL) as url:
     with open(image_path, 'wb') as f:
         f.write(url.read())
 
-command = 'gsettings set org.gnome.desktop.background picture-uri "file://' +image_path + '"'
+g_path = os.popen('which gsettings').read()[:-1]
+command = g_path + ' set org.gnome.desktop.background picture-uri "file://' +image_path + '"'
 subprocess.run(command.split(' '))

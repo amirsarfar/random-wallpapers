@@ -11,8 +11,8 @@ python_exec = sys.executable
 if not os.path.exists(os.environ['HOME'] + "/.python-wallpaper-unsplash"):
     os.makedirs(os.environ['HOME'] + "/.python-wallpaper-unsplash") 
 
-os.system('cp ./wallpaper.py $HOME/.python-wallpaper-unsplash/wallpaper.py')
+os.system('cp ./main.py $HOME/.python-wallpaper-unsplash/main.py')
 
-command = '{ crontab -l; echo "*/' + str(M) + ' * * * * cd $HOME/.python-wallpaper-unsplash/ && '+ python_exec +' wallpaper.py && cd - >> /dev/null 2>&1"; } | crontab -' 
+command = '{ crontab -l; echo "*/' + str(M) + ' * * * * cd $HOME/.python-wallpaper-unsplash/ && '+ python_exec +' main.py && cd - >> /dev/null 2>&1"; } | crontab -' 
 
 os.system(command)
